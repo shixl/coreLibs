@@ -75,6 +75,7 @@ public class NavBar extends FrameLayout {
      **/
     public void setTitle(String title) {
         mTvTitle.setVisibility(VISIBLE);
+
         mTvTitle.setText(title);
     }
 
