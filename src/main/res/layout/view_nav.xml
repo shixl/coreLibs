@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_height">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:src="@color/nav_bg"
+        />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:src="@mipmap/iv_back"
+        android:layout_centerVertical="true"
+        android:paddingLeft="10dp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingLeft="8dp"
+        android:textSize="16sp"
+        android:text="武汉"
+        android:textColor="@color/white"
+        />
+
+    <ImageView
+        android:id="@+id/iv_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/down"
+        android:scaleType="center"
+        android:layout_centerVertical="true"
+        android:paddingStart="45dp"
+        />
+
+    <include layout="@layout/layout_home_search"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_down"
+        />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_centerVertical="true"
+        android:text="标题"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:ellipsize="end"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/iv_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/code"
+        android:layout_alignParentRight="true"
+        android:scaleType="center"
+        android:paddingRight="40dp"
+        android:visibility="gone"
+        />
+
+
+    <ImageView
+        android:id="@+id/iv_second_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/code"
+        android:layout_alignParentRight="true"
+        android:scaleType="center"
+        android:paddingRight="10dp"
+
+        />
+
+</RelativeLayout>

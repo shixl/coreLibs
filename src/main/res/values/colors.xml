@@ -6,4 +6,8 @@
     <color name="white">#ffffff</color>
     <color name="dark">#f1f1ec</color>
     <color name="statusBar">#f1f1ec</color>
+    <color name="nav_bg">#06C1AE</color>
+    <color name="search_bg">#04A090</color>
+    <color name="text_light">#52b7ac</color>
+    <color name="transparent">#00000000</color>
 </resources>
