@@ -114,7 +114,7 @@ public class NavBar extends FrameLayout {
         mIvCode.setImageResource(resId);
         mIvCode.setOnClickListener(listener);
         mIvSecondCode.setVisibility(VISIBLE);
-        mIvSecondCode.setImageResource(secondResId);
+        mIvSecondCode.setImageResource(resId);
         mIvSecondCode.setOnClickListener(secondListener);
     }
 
