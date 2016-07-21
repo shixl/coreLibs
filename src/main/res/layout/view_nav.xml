@@ -14,12 +14,12 @@
     <ImageView
         android:id="@+id/iv_back"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:contentDescription="@null"
         android:src="@mipmap/iv_back"
         android:layout_centerVertical="true"
         android:paddingLeft="10dp"
-        android:visibility="gone"
+        android:scaleType="centerCrop"
         />
 
     <TextView
@@ -31,6 +31,7 @@
         android:textSize="16sp"
         android:text="武汉"
         android:textColor="@color/white"
+        android:visibility="gone"
         />
 
     <ImageView
@@ -41,6 +42,7 @@
         android:scaleType="center"
         android:layout_centerVertical="true"
         android:paddingStart="45dp"
+        android:visibility="gone"
         />
 
     <include layout="@layout/layout_home_search"
@@ -48,6 +50,17 @@
         android:layout_height="35dp"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@id/iv_down"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="35dp"
+        />
+
+    <include layout="@layout/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_back"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="18dp"
         />
 
     <TextView
@@ -86,7 +99,7 @@
         android:layout_alignParentRight="true"
         android:scaleType="center"
         android:paddingRight="10dp"
-
+        android:visibility="gone"
         />
 
 </RelativeLayout>

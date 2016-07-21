@@ -22,6 +22,7 @@ public class NavBar extends FrameLayout {
     private ImageView mIvCode;
     private ImageView mIvBg;
     private ImageView mIvSecondCode;
+    private LinearLayout mllSearchTrue;
 
     private OnClickListener mBackListener = new OnClickListener() {
         @Override
@@ -29,7 +30,6 @@ public class NavBar extends FrameLayout {
             ((Activity)getContext()).finish();
         }
     };
-
 
     public NavBar(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -47,6 +47,7 @@ public class NavBar extends FrameLayout {
         mIvCode = (ImageView) contentView.findViewById(R.id.iv_code);
         mIvSecondCode = (ImageView) contentView.findViewById(R.id.iv_second_code);
         mIvBg = (ImageView) contentView.findViewById(R.id.iv_bg);
+        mllSearchTrue = (LinearLayout) contentView.findViewById(R.id.ll_search_true);
 
         addListener();
     }
@@ -56,9 +57,10 @@ public class NavBar extends FrameLayout {
     }
 
     /**
-     * 设置返回监听, 默认的返回监听是结束Activity
+     * 设置返回监听已经返回按钮图片, 默认的返回监听是结束Activity
      **/
-    public void setOnBackClickedListener(OnClickListener listener) {
+    public void setOnBackClickedListener(int resId,OnClickListener listener) {
+        mIvBack.setImageResource(resId);
         mIvBack.setVisibility(VISIBLE);
         mIvBack.setOnClickListener(listener);
     }
@@ -75,7 +77,6 @@ public class NavBar extends FrameLayout {
      **/
     public void setTitle(String title) {
         mTvTitle.setVisibility(VISIBLE);
-
         mTvTitle.setText(title);
     }
 
@@ -87,6 +88,7 @@ public class NavBar extends FrameLayout {
         mIvBack.setVisibility(GONE);
         mTvAddress.setVisibility(VISIBLE);
         mIvDown.setVisibility(VISIBLE);
+        mTvAddress.setText(address);
     }
 
     /**
@@ -115,10 +117,17 @@ public class NavBar extends FrameLayout {
         mIvCode.setImageResource(resId);
         mIvCode.setOnClickListener(listener);
         mIvSecondCode.setVisibility(VISIBLE);
-        mIvSecondCode.setImageResource(resId);
+        mIvSecondCode.setImageResource(secondResId);
         mIvSecondCode.setOnClickListener(secondListener);
     }
 
+    /**
+     * 显示搜索
+     */
+    public void search(){
+        mllSearchTrue.setVisibility(VISIBLE);
+
+    }
 
     /**
      * 设置标题栏背景颜色

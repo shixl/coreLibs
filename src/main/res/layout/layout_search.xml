@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ll_search"
+    android:id="@+id/ll_search_true"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="35dp"
     android:gravity="center_vertical"
-    android:background="@drawable/search_home_bg"
+    android:background="@drawable/search_bg"
     android:visibility="gone"
     >
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@mipmap/search_bg"
         android:contentDescription="@null"
-        android:src="@mipmap/search"
-        android:scaleType="center"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:scaleType="centerInside"
+        android:padding="5dp"
         />
 
-    <TextView
+    <EditText
+        android:id="@+id/et_search"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="请输入商圈,品类"
-        android:singleLine="true"
-        android:textColor="@color/text_light"
         android:gravity="center_vertical"
+        android:singleLine="true"
+        android:hint="请输入商家名品类或者商圈..."
+        android:textColor="@color/search_color"
         android:textSize="16sp"
-        />
+        android:inputType="text"
+        android:background="@null"
+        android:paddingRight="12dp"/>
+
 
 </LinearLayout>
