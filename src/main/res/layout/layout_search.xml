@@ -30,6 +30,4 @@
         android:inputType="text"
         android:background="@null"
         android:paddingRight="12dp"/>
-
-
 </LinearLayout>

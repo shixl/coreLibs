@@ -5,13 +5,23 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import study.com.s_sxl.carelib.R;
+import study.com.s_sxl.carelib.utils.IMEUtil;
 
+/**
+ * Copyright  @2016 All rights reserved.
+ * <p>Description: </p>
+ * @ClassName NavBar
+ * @Package study.com.s_sxl.carelib.viewUtils
+ * @Author S_sxl
+ * @Time 2016/7/21
+ */
 public class NavBar extends FrameLayout {
 
     private ImageView mIvDown;
@@ -30,6 +40,7 @@ public class NavBar extends FrameLayout {
             ((Activity)getContext()).finish();
         }
     };
+    private EditText mEtSearch;
 
     public NavBar(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -48,6 +59,7 @@ public class NavBar extends FrameLayout {
         mIvSecondCode = (ImageView) contentView.findViewById(R.id.iv_second_code);
         mIvBg = (ImageView) contentView.findViewById(R.id.iv_bg);
         mllSearchTrue = (LinearLayout) contentView.findViewById(R.id.ll_search_true);
+        mEtSearch = (EditText) contentView.findViewById(R.id.et_search);
 
         addListener();
     }
@@ -127,6 +139,20 @@ public class NavBar extends FrameLayout {
     public void search(){
         mllSearchTrue.setVisibility(VISIBLE);
 
+    }
+
+    /**
+     * 获取用户输入的搜索关键字
+     */
+    public String getSearch(){
+        return mEtSearch.getText().toString().trim();
+    }
+
+    /**
+     * 关闭软键盘
+     **/
+    public void closeIME() {
+        IMEUtil.closeIME(mEtSearch, getContext());
     }
 
     /**
