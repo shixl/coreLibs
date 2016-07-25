@@ -27,7 +27,9 @@ public class ToastMgr {
      * 在程序初始化的时候调用, 只需调用一次
      */
     public static void init(Context _context, View view) {
-        it = new Toast(_context);
+        if(it == null){
+            it = new Toast(_context);
+        }
         it.setView(view);
     }
 

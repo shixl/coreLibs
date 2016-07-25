@@ -37,13 +37,13 @@ public class InterceptedFragmentTabHost extends TabHost
 
     static final class TabInfo {
         private final String tag;
-        private final Class<?> mClz;
+        private final Class<?> clss;
         private final Bundle args;
         private Fragment fragment;
 
         TabInfo(String _tag, Class<?> _class, Bundle _args) {
             tag = _tag;
-            mClz = _class;
+            clss = _class;
             args = _args;
         }
     }
@@ -328,7 +328,7 @@ public class InterceptedFragmentTabHost extends TabHost
 
             if (newTab.fragment == null) {
                 newTab.fragment = Fragment.instantiate(mContext,
-                        newTab.mClz.getName(), newTab.args);
+                        newTab.clss.getName(), newTab.args);
                 ft.add(mContainerId, newTab.fragment, newTab.tag);
             } else {
                 ft.attach(newTab.fragment);

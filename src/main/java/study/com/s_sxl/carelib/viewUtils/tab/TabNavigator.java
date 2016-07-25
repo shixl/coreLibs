@@ -8,6 +8,7 @@ import android.view.View;
 /**
  * 用于Fragment tab页切换
  * <BR/>
+ * Created by Ryan on 2016/1/5.
  */
 public class TabNavigator {
 

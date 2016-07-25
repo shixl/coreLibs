@@ -96,10 +96,11 @@ public class NavBar extends FrameLayout {
      * 显示地址与下拉按钮
      * @param address
      */
-    public void setAddress(String address){
+    public void setAddress(String address,OnClickListener listener){
         mIvBack.setVisibility(GONE);
         mTvAddress.setVisibility(VISIBLE);
         mIvDown.setVisibility(VISIBLE);
+        mIvDown.setOnClickListener(listener);
         mTvAddress.setText(address);
     }
 
@@ -118,6 +119,14 @@ public class NavBar extends FrameLayout {
     public void showRightIcon(int resId, OnClickListener listener) {
         mIvSecondCode.setVisibility(VISIBLE);
         mIvSecondCode.setImageResource(resId);
+        mIvSecondCode.setOnClickListener(listener);
+    }
+
+    /**
+     * 显示右侧图片按钮
+     **/
+    public void showRightIcon(OnClickListener listener) {
+        mIvSecondCode.setVisibility(VISIBLE);
         mIvSecondCode.setOnClickListener(listener);
     }
 

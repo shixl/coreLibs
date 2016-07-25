@@ -3,6 +3,7 @@ package study.com.s_sxl.carelib.viewUtils.tab;
 /**
  * 用于{@link InterceptedFragmentTabHost}权限控制
  * <BR/>
+ * Created by Ryan on 2016/1/6.
  */
 public interface TabChangeInterceptor {
     /**
