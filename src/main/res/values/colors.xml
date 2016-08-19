@@ -11,4 +11,6 @@
     <color name="text_light">#52b7ac</color>
     <color name="transparent">#00000000</color>
     <color name="search_color">#ededef</color>
+    <color name="text_main">#666</color>
+    <color name="main">#3ca5b6</color>
 </resources>

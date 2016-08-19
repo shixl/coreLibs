@@ -21,64 +21,64 @@ import android.widget.Scroller;
  */
 @SuppressLint("NewApi")
 public class SlideListView extends ListView {
+
 	/**
-	 * 
 	 * 当前滑动的ListView　position
 	 */
 	private int slidePosition;
+
 	/**
-	 * 
 	 * 手指按下X的坐标
 	 */
 	private int downY;
+
 	/**
-	 * 
 	 * 手指按下Y的坐标
 	 */
 	private int downX;
+
 	/**
-	 * 
 	 * 屏幕宽度
 	 */
 	private int screenWidth;
+
 	/**
-	 * 
 	 * ListView的item
 	 */
 	private View itemView;
+
 	/**
-	 * 
 	 * 滑动类
 	 */
 	private Scroller scroller;
 	private static final int SNAP_VELOCITY = 600;
+
 	/**
-	 * 
 	 * 速度追踪对象
 	 */
 	private VelocityTracker velocityTracker;
+
 	/**
-	 * 
 	 * 是否响应滑动，默认为不响应
 	 */
 	private boolean isSlide = false;
+
 	/**
-	 * 
 	 * 认为是用户滑动的最小距离
 	 */
 	private int mTouchSlop;
+
 	/**
-	 * 
 	 * 移除item后的回调接口
 	 */
 	private RemoveListener mRemoveListener;
-	/**
-	 * 
+
+	/*
 	 * 标示是否移除
 	 */
 	private boolean isRemove = false;
+
 	/**
-	 * 
 	 * 用来指示item滑出屏幕的方向,向左或者向右,用一个枚举值来标记
 	 */
 	private RemoveDirection removeDirection;
@@ -110,9 +110,7 @@ public class SlideListView extends ListView {
 	}
 
 	/**
-	 * 
 	 * 设置滑动删除的回调接口
-	 * 
 	 * @param removeListener
 	 */
 	public void setRemoveListener(RemoveListener removeListener) {
@@ -197,7 +195,6 @@ public class SlideListView extends ListView {
 	}
 
 	/**
-	 * 
 	 * 滑动会原来的位置
 	 */
 	private void scrollBack() {
@@ -207,7 +204,6 @@ public class SlideListView extends ListView {
 	}
 
 	/**
-	 * 
 	 * 根据手指滚动itemView的距离来判断是滚动到开始位置还是向左或者向右滚动
 	 */
 	private void scrollByDistanceX() {
@@ -224,7 +220,6 @@ public class SlideListView extends ListView {
 	}
 
 	/**
-	 * 
 	 * 处理我们拖动ListView item的逻辑
 	 */
 	@SuppressLint("Recycle")
@@ -342,14 +337,9 @@ public class SlideListView extends ListView {
 	}
 
 	/**
-	 * 
 	 * 添加用户的速度跟踪器
-	 * 
-	 * 
-	 * 
 	 * @param event
 	 */
-
 	private void addVelocityTracker(MotionEvent event) {
 		if (velocityTracker == null) {
 			velocityTracker = VelocityTracker.obtain();
@@ -361,10 +351,8 @@ public class SlideListView extends ListView {
 	}
 
 	/**
-	 * 
 	 * 移除用户速度跟踪器
 	 */
-
 	private void recycleVelocityTracker() {
 
 		if (velocityTracker != null) {
@@ -375,11 +363,7 @@ public class SlideListView extends ListView {
 	}
 
 	/**
-	 * 
 	 * 获取X方向的滑动速度,大于0向右滑动，反之向左
-	 * 
-	 * 
-	 * 
 	 * @return
 	 */
 	private int getScrollVelocity() {
@@ -389,18 +373,10 @@ public class SlideListView extends ListView {
 	}
 
 	/**
-	 * 
-	 * 
-	 * 
 	 * 当ListView item滑出屏幕，回调这个接口
-	 * 
+	 *
 	 * 我们需要在回调方法removeItem()中移除该Item,然后刷新ListView
-	 * 
-	 * 
-	 * 
 	 * @author xiaanming
-	 * 
-	 * 
 	 */
 	public interface RemoveListener {
 		public void removeItem(RemoveDirection direction, int position);
