@@ -5,12 +5,15 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.lang.reflect.Field;
+
+import study.com.s_sxl.carelib.R;
 
 /**
  *
@@ -77,33 +80,33 @@ public class StatusBarUtil {
 //	    }
 //	}
 //
-//	/**
-//	 * @Description Fragment顶部浸入状态栏
-//	 * @return void
-//	 */
-//	public static void initSystemBarWithImmerged(Activity activity, View view, int colorRes) {
-//	    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//	    	setTranslucentStatus(activity, true);
-//
-//	        // 创建状态栏的管理实例
-//	        SystemBarTintManager tintManager = new SystemBarTintManager(activity);
-//	        // 激活状态栏设置
-//	        tintManager.setStatusBarTintEnabled(true);
-//	        // 设置状态栏背景色
-//	        tintManager.setStatusBarTintColor(activity.getResources().getColor(colorRes));
-//
-//	        View titleLayout = view.findViewById(R.id.rl_top_title);
-//			if (titleLayout != null) {
-//				ViewGroup.LayoutParams layoutParams = (ViewGroup.LayoutParams) titleLayout.getLayoutParams();
-//				layoutParams.height = activity.getResources().getDimensionPixelSize(R.dimen.space_title_bar) + getStatusbarHeigth(activity);
-//				titleLayout.setLayoutParams(layoutParams);
-//			}
-//	    }
-//	}
+	/**
+	 * @Description Fragment顶部浸入状态栏
+	 * @return void
+	 */
+	public static void initSystemBarWithImaged(Activity activity, View view, int colorRes) {
+	    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+	    	setTranslucentStatus(activity, true);
+
+	        // 创建状态栏的管理实例
+	        SystemBarTintManager tintManager = new SystemBarTintManager(activity);
+	        // 激活状态栏设置
+	        tintManager.setStatusBarTintEnabled(true);
+	        // 设置状态栏背景色
+	        tintManager.setStatusBarTintColor(activity.getResources().getColor(colorRes));
+
+	        View titleLayout = view.findViewById(R.id.rl_top_title);
+			if (titleLayout != null) {
+				ViewGroup.LayoutParams layoutParams = (ViewGroup.LayoutParams) titleLayout.getLayoutParams();
+				layoutParams.height = activity.getResources().getDimensionPixelSize(R.dimen.space_title_bar) + getStatusBarHeight(activity);
+				titleLayout.setLayoutParams(layoutParams);
+			}
+	    }
+	}
 	
 	// 获取状态栏高度
 	@SuppressWarnings("rawtypes")
-	public static int getStatusbarHeight(Activity activity) {
+	public static int getStatusBarHeight(Activity activity) {
 		Class c = null;
 		try {
 			c = Class.forName("com.android.internal.R$dimen");
@@ -138,8 +141,8 @@ public class StatusBarUtil {
 			e.printStackTrace();
 		}
 		
-		int statusbarHeight = activity.getResources().getDimensionPixelSize(x);
-		return statusbarHeight;
+		int statusBarHeight = activity.getResources().getDimensionPixelSize(x);
+		return statusBarHeight;
 	}
 	
 }

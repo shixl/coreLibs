@@ -35,11 +35,11 @@ public class InterceptedFragmentTabHost extends TabHost
     private boolean mAttached;
     private TabChangeInterceptor mInterceptor;
 
-    static final class TabInfo {
+    public static final class TabInfo {
         private final String tag;
         private final Class<?> clss;
         private final Bundle args;
-        private Fragment fragment;
+        public Fragment fragment;
 
         TabInfo(String _tag, Class<?> _class, Bundle _args) {
             tag = _tag;
@@ -195,7 +195,9 @@ public class InterceptedFragmentTabHost extends TabHost
             }
         }
     }
-
+    public TabInfo getTabInfo(int position){
+        return mTabs.get(position);
+    }
     @Override
     public void setOnTabChangedListener(OnTabChangeListener l) {
         mOnTabChangeListener = l;

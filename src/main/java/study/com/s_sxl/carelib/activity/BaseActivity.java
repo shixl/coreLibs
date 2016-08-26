@@ -4,10 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
+import com.jaeger.library.StatusBarUtil;
+
 import butterknife.ButterKnife;
 import study.com.s_sxl.carelib.AppManager;
 import study.com.s_sxl.carelib.R;
-import study.com.s_sxl.carelib.utils.StatusBarUtil;
 import study.com.s_sxl.carelib.utils.ToastMgr;
 import study.com.s_sxl.carelib.viewUtils.LoadingDialog;
 
@@ -21,10 +22,10 @@ import study.com.s_sxl.carelib.viewUtils.LoadingDialog;
  */
 public abstract class BaseActivity extends FragmentActivity {
 
-    // 状态栏与UI颜色是否一体化
-    protected boolean mIsUseSystemBar = true;
-
-    private int mStatusBarColorResource = 0;
+//    // 状态栏与UI颜色是否一体化
+//    protected boolean mIsUseSystemBar = true;
+//
+//    private int mStatusBarColorResource = 0;
 
     private LoadingDialog mLoadingDialog;
 
@@ -36,6 +37,7 @@ public abstract class BaseActivity extends FragmentActivity {
         ButterKnife.bind(this);
         mLoadingDialog = new LoadingDialog(this);
         init(savedInstanceState);
+        setStatusBar();
     }
 
     protected abstract void init(Bundle savedInstanceState);
@@ -79,23 +81,27 @@ public abstract class BaseActivity extends FragmentActivity {
         ButterKnife.unbind(this);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if(mIsUseSystemBar){
-            if(mStatusBarColorResource == 0){
-                StatusBarUtil.initSystemBar(this,R.color.statusBar);
-            }else {
-                StatusBarUtil.initSystemBar(this,mStatusBarColorResource);
-            }
-        }
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        if(mIsUseSystemBar){
+//            if(mStatusBarColorResource == 0){
+//                StatusBarUtil.initSystemBar(this, R.color.transparent);
+//            }else {
+//                StatusBarUtil.initSystemBar(this,mStatusBarColorResource);
+//            }
+//        }
+//    }
 
-    /**
-     * 设置状态栏颜色
-     * @param colorId
-     */
-    public void setStatusBarColor(int colorId){
-        mStatusBarColorResource = colorId;
+//    /**
+//     * 设置状态栏颜色
+//     * @param colorId
+//     */
+//    public void setStatusBarColor(int colorId){
+//        mStatusBarColorResource = colorId;
+//    }
+
+    protected void setStatusBar() {
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.red));
     }
 }
