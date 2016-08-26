@@ -22,11 +22,6 @@ import study.com.s_sxl.carelib.viewUtils.LoadingDialog;
  */
 public abstract class BaseActivity extends FragmentActivity {
 
-//    // 状态栏与UI颜色是否一体化
-//    protected boolean mIsUseSystemBar = true;
-//
-//    private int mStatusBarColorResource = 0;
-
     private LoadingDialog mLoadingDialog;
 
     @Override
@@ -80,26 +75,6 @@ public abstract class BaseActivity extends FragmentActivity {
         AppManager.getAppManager().finishActivity(this);
         ButterKnife.unbind(this);
     }
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        if(mIsUseSystemBar){
-//            if(mStatusBarColorResource == 0){
-//                StatusBarUtil.initSystemBar(this, R.color.transparent);
-//            }else {
-//                StatusBarUtil.initSystemBar(this,mStatusBarColorResource);
-//            }
-//        }
-//    }
-
-//    /**
-//     * 设置状态栏颜色
-//     * @param colorId
-//     */
-//    public void setStatusBarColor(int colorId){
-//        mStatusBarColorResource = colorId;
-//    }
 
     protected void setStatusBar() {
         StatusBarUtil.setColor(this, getResources().getColor(R.color.red));
