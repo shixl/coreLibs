@@ -68,7 +68,7 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/text_main"
         android:layout_centerVertical="true"
         android:text="标题"
         android:gravity="center_vertical"
