@@ -113,10 +113,10 @@
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" name="adapter-rxjava-2.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-24.1.1" level="project" />
-    <orderEntry type="library" exported="" name="okio-1.6.0" level="project" />
     <orderEntry type="library" exported="" name="gson-2.6.1" level="project" />
-    <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
+    <orderEntry type="library" exported="" name="okio-1.6.0" level="project" />
     <orderEntry type="library" exported="" name="retrofit-2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-24.1.1" level="project" />
   </component>
 </module>
