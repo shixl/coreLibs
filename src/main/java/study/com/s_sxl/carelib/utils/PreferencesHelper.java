@@ -123,6 +123,24 @@ public class PreferencesHelper {
     }
 
     /**
+     * 布尔类型值的保存
+     * @param key
+     * @param flag
+     */
+    public static void saveBoolean(String key, boolean flag){
+        sharedPreferences.edit().putBoolean(key,flag).apply();
+    }
+
+    /**
+     * 布尔类型值的获取
+     * @param key
+     * @return
+     */
+    public static boolean getBooleanData(String key){
+        return sharedPreferences.getBoolean(key,true);
+    }
+
+    /**
      * 删除保存的对象
      */
     public static void remove(String key) {
