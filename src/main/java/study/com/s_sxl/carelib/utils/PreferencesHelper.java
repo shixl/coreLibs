@@ -137,7 +137,7 @@ public class PreferencesHelper {
      * @return
      */
     public static boolean getBooleanData(String key){
-        return sharedPreferences.getBoolean(key,true);
+        return sharedPreferences.getBoolean(key,false);
     }
 
     /**
