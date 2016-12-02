@@ -14,9 +14,18 @@ public final class AppManager{
 
     }
 
-    public static AppManager getAppManager(){
-        if(mAppManager == null){
-            mAppManager = new AppManager();
+    /**
+     * 单一实例
+     */
+    public static AppManager getAppManager() {
+        if (mAppManager == null) {
+            synchronized (AppManager.class){
+                if(mAppManager==null){
+                    mAppManager = new AppManager();
+                    mAppManager.mActivityStack = new Stack();
+                }
+            }
+
         }
         return mAppManager;
     }
